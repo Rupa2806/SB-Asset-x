@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Asset‑x</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="index.html">Asset‑x</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="logoutLink" onclick="logoutAdmin()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Admin Content -->
+  <div class="container mt-5">
+    <!-- Admin Login Form -->
+    <div id="adminLoginForm">
+      <h2>Admin Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="adminEmail">Email</label>
+          <input type="email" id="adminEmail" class="form-control" placeholder="admin@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" class="form-control" placeholder="admin123" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <!-- Admin Dashboard Data -->
+    <div id="adminDashboard" style="display:none;">
+      <h2>Admin Dashboard</h2>
+      <h3>Users</h3>
+      <div id="usersTable"></div>
+      <h3>Accounts</h3>
+      <div id="accountsTable"></div>
+      <h3>Transactions</h3>
+      <div id="transactionsTable"></div>
+    </div>
+  </div>
+  <!-- Bootstrap JS, SweetAlert2 JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Admin JS -->
+  <script src="js/admin.js"></script>
+</body>
+</html>

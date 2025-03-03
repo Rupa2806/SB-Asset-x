@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Asset‑x</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Background with subtle gradient */
+    body {
+      background: linear-gradient(135deg, #111, #333);
+      color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Enhanced Navbar */
+    .navbar {
+      background-color: #000;
+      border-bottom: 4px solid #ff6600;
+    }
+    .navbar-brand, .nav-link {
+      color: #ff6600 !important;
+      font-size: 1.1rem;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%288, 134, 229, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    /* Info Section Styling */
+    #infoSection, #welcomeSection {
+      background-color: #222;
+      border: 1px solid #ff6600;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(255,102,0,0.3);
+    }
+    #infoSection h4, #welcomeSection h2 {
+      color: #ff6600;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      #infoSection h4, #welcomeSection h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html"><i class="fas fa-university"></i> Asset‑x</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" 
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <!-- Create Account Nav Link (shown only if no account exists) -->
+        <li class="nav-item" id="createAccountNav" style="display:none;">
+          <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Create Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="logoutLink"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Container -->
+  <div class="container mt-5">
+    <!-- Info Section: Shown if no account exists -->
+    <div id="infoSection" style="display:none;">
+      <h4>Welcome to Asset‑x, a mini bank!</h4>
+      <p>Asset‑x is a modern, secure mini bank designed for easy account management and seamless transactions. Create your bank account to manage your funds, deposit, withdraw, or transfer money.</p>
+      <p>Please click on "Create Account" in the navigation bar to get started.</p>
+    </div>
+    
+    <!-- Welcome Section: Shown when account details exist -->
+    <div id="welcomeSection" style="display:none;">
+      <h2>Welcome, <span id="userName"></span>!</h2>
+      <div id="accountDetails" class="mt-4" style="display:none;">
+        <div class="card" style="border: #ff6600; background-color: #333;border-radius: 10px;">
+          <div class="card-body" style="color: #f8f9fa; ">
+            <h5 class="card-title">Your Account Details</h5>
+            <p class="card-text">Account Number: <span id="accountNumber"></span></p>
+            <p class="card-text">Balance: $<span id="balance"></span></p>
+          </div>
+        </div>
+        <!-- Banking Actions -->
+        <div id="bankingActions" class="mt-4">
+          <h4>Banking Actions</h4>
+          <div class="form-group">
+            <input type="number" id="transactionAmount" class="form-control" placeholder="Enter Amount">
+          </div>
+          <button id="depositBtn" class="btn btn-primary mr-2">Deposit</button>
+          <button id="withdrawBtn" class="btn btn-warning mr-2">Withdraw</button>
+          <h5 class="mt-4">Transfer Money</h5>
+          <div class="form-group">
+            <input type="text" id="transferAccount" class="form-control" placeholder="Recipient Account Number">
+          </div>
+          <button id="transferBtn" class="btn btn-info">Transfer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JS Scripts -->
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Dashboard JS -->
+  <script src="js/dashboard.js"></script>
+  <!-- Font Awesome (for icons) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset‑x Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Background with subtle gradient */
+    body {
+      background: linear-gradient(135deg, #111, #333);
+      color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Enhanced Navbar */
+    .navbar {
+      background-color: #000;
+      border-bottom: 4px solid #ff6600;
+    }
+    .navbar-brand, .nav-link {
+      color: #ff6600 !important;
+      font-size: 1.1rem;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%288, 134, 229, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    /* Hero Header */
+    header.jumbotron {
+      background: linear-gradient(135deg, #000, #222);
+      border-bottom: 3px solid #ff6600;
+      padding: 3rem 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(255,102,0,0.4);
+    }
+    header.jumbotron h1 {
+      font-size: 3rem;
+      color: #ff6600;
+      font-weight: bold;
+    }
+    header.jumbotron p.lead {
+      font-size: 1.5rem;
+      color: #f8f9fa;
+    }
+    /* Info Section Styling */
+    #dashboardInfo {
+      background-color: #222;
+      border: 1px solid #ff6600;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(255,102,0,0.3);
+    }
+    #dashboardInfo h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff6600;
+    }
+    #dashboardInfo p {
+      font-size: 1.1rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      header.jumbotron h1 {
+        font-size: 2.5rem;
+      }
+      header.jumbotron p.lead {
+        font-size: 1.2rem;
+      }
+      #dashboardInfo h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#"><i class="fas fa-university"></i> Asset‑x</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" 
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto" id="navLinks">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html" id="loginLink"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html" id="registerLink"><i class="fas fa-user-plus"></i> Register</a>
+        </li>
+        <li class="nav-item" style="display:none;" id="dashboardLink">
+          <a class="nav-link" href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item" style="display:none;" id="logoutLink">
+          <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero Header -->
+  <header class="jumbotron text-center">
+    <h1>Welcome to Asset‑x Mini Bank</h1>
+    <p class="lead">Your one‑stop digital banking solution.</p>
+  </header>
+  
+  <!-- Info Section -->
+  <div class="container">
+    <section id="dashboardInfo" class="my-4 text-center">
+      <h2>About Asset‑x</h2>
+      <p>Asset‑x is a modern, secure mini bank designed for easy account management and seamless transactions.</p>
+      <p>Create your bank account to deposit, withdraw, and transfer funds effortlessly.</p>
+      <p>Please login or register to get started.</p>
+    </section>
+  </div>
+  
+  <!-- Bootstrap JS, Popper.js, jQuery, SweetAlert2 JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Global JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
